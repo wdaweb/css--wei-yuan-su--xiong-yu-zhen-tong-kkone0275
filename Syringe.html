@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>針筒製作</title>
+    <style>
+.box01{
+    width: 470px;
+    height: 55px;
+    border: 1px solid black;
+    background: rgb(255, 255, 255);
+    background-image: linear-gradient(180deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+    border-radius: 10px;
+    position: absolute;
+    /* position: absolute 依據其「有定位的父層」做位移。 */
+    top: 50%;
+    left: 50%;
+    /* top: 50%、left: 50% 進行向下、左位移 50%： */
+    transform: translate(-50%,-50%);
+    /* 因物件對齊點為左上角，故須進行 X、Y 軸負向偏移 50% 讓對齊點為物件中心：
+        transform: translate(-50%,-50%)　才可真正置中。 */
+}
+
+.box01::before{
+    content: "";
+    width: 40px;
+    height: 94px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    background-image: linear-gradient(180deg,rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: -20px;
+    left:-36px;
+}
+
+.box01::after{
+    content: "";
+    width: 360px;
+    height: 90px;
+    border: 1px solid black;
+    background: rgb(255, 255, 255);
+    background-image: linear-gradient(180deg,  rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: -18px;
+    left: 50px;
+}
+
+.box02 {
+    width: 45px;
+    height: 91px;
+    background: black;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+.box02::before{
+    content: "";
+    width: 155px;
+    height: 90px;
+    border: 1px solid black;
+    background: rgb(242, 240, 166);
+    background-image: linear-gradient(180deg,rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 0px;
+    left:45px;
+}
+
+.box02::after{
+    content: "";
+    width: 364px;
+    height: 10px;
+    background-image: linear-gradient(to right,black,black 1.5px,transparent 1.5px);
+    background-size: 20px;
+    position: absolute;
+    left: -162px;
+    z-index: 1;
+}
+
+.word {
+    position: absolute;
+    font-family: "微軟正黑體";
+    font-weight: bold;
+    color: gray;
+    right: 295px;
+    top: 50px;
+    z-index: 3;
+}
+
+.t01{
+    position: absolute;
+    background: gray;
+    width: 70px;
+    height: 1px;
+    margin: auto;
+    z-index: 4;
+    right: -70px;
+    top: 26px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="box01">
+        <div class="word">
+            Made in Taiwan</div>
+            <div class="t01"></div>
+        <div class="box02">
+        </div>
+    </div>
+</body>
+</html>
